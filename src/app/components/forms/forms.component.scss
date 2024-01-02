@@ -61,28 +61,28 @@
   margin-bottom: 38px;
 }
 
-.form-group .btn-wrapper {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
 .form-group .checkbox-wrapper {
   color: var(--light-grey);
   margin-bottom: 32px;
-  position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: start;
+  flex-direction: column;
+  gap: 12px;
+}
 
-  span {
-    position: absolute;
-    right: 0;
-  }
+.form-group .checkbox-wrapper input {
+  margin-right: 8px;
+}
 
-  input {
-    margin-right: 8px;
-  }
+.form-group .btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
 }
 
 .form-group .btn-wrapper .btn {
@@ -92,7 +92,7 @@
   font-weight: 700;
   text-transform: uppercase;
   padding: 16px;
-  width: 25%;
+  width: 100%;
   border: none;
   cursor: pointer;
 }
@@ -104,4 +104,17 @@
 .form-group .btn-wrapper .btn-secondary {
   background-color: transparent;
   border: 1px solid var(--light-grey);
+}
+
+@media (min-width: 768px) {
+  .form-group .btn-wrapper {
+    flex-direction: row;
+  }
+  .form-group .btn-wrapper .btn {
+    width: 25%;
+  }
+  .form-group .checkbox-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
