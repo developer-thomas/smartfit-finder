@@ -1,5 +1,9 @@
 <div class="app-container">
-  <app-header></app-header> <app-forms></app-forms>
+  <app-header></app-header>
+  <app-forms (submitEvent)="onSubmit()"></app-forms>
+  <!-- esse showList não é propriamente um booleano mas um subjectBehavior, então precisamos adicionar um pipe async para ouvir de forma assíncrona  -->
+  <!-- para usar o async é preciso importar o commonModule -->
+  <app-cards-list *ngIf="(showList | async)" [unitsList]="unitsList"></app-cards-list>
 </div>
 
 <router-outlet></router-outlet>

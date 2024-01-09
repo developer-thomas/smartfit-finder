@@ -1,0 +1,10 @@
+<ul class="card-list">
+  <!-- É preciso fazer um ngFor de unitsList para utilizar a variável card como valor da propriedade [card]
+    Esta propriedade nada mais é do que a passagem dos dados filtrados da api para o component card
+    O que torna possível a renderização das informações dentro do component card
+  -->
+  <li *ngFor="let unit of unitsList">
+    <app-card [card]="unit"></app-card>
+  </li>
+  
+</ul>
